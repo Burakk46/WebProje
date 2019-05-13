@@ -1,0 +1,98 @@
+﻿@model Burak_1380_MVC.Models.Kullanici
+@{
+    ViewBag.Title = "KayitOl";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+@section loginregistercss{
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Ionicons -->
+<link href="~/Content/css/ionicons.min.css" rel="stylesheet" />
+<!-- Theme style -->
+<link href="~/Content/css/AdminLTE.min.css" rel="stylesheet" />
+<!-- iCheck -->
+<link href="~/Content/css/blue.css" rel="stylesheet" />
+    }
+<body class="hold-transition register-page">
+    <div class="register-box">
+        
+
+        <div class="register-box-body">
+            <p class="login-box-msg">Kayıt Ol</p>
+
+            <form method="post">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="İsim" name="Ad">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="Soyisim" name="Soyad">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="date" class="form-control" name="KullaniciDogumTarihi">
+                    <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                </div>            
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Şifre" name="KullaniciSifre">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                @Html.ValidationMessageFor(model => model.KullaniciSifreTekrar)
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Tekrar Şifre" name="KullaniciSifreTekrar">
+                    <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="email" class="form-control" placeholder="Email" name="KullaniciEmail">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    @Html.ValidationMessageFor(model => model.KullaniciEmail)
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="tel" class="form-control" placeholder="Telefon" name="KullaniciTelefon" maxlength="11">
+                    <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+                    @Html.ValidationMessageFor(model => model.KullaniciTelefon)
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="radio" name="Cinsiyet" value="Erkek">&nbsp; Erkek&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="Cinsiyet" value="Bayan">&nbsp; Kadın
+           
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox" name="onay" value="onaylandı" style="margin-left:2px;">&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">Gizlilik Politikasını </a>okudum ve kabul ediyorum.
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+        <p class="text-center font-weight-bold">@ViewBag.Hata</p>   
+            <div class="social-auth-links text-center">
+                <p>- Veya -</p>
+                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
+                    <i class="fa fa-facebook"></i> <div class="text-center">Facebook İle Giriş Yap</div>
+                </a>
+                <a href="#" class="btn btn-block btn-social btn-google btn-flat">
+                    <i class="fa fa-google-plus"></i><div class="text-center">Google+ İle Giriş Yap</div> 
+                </a>
+            </div>
+
+            <a href="login.html" class="text-center">Zaten Üyeliğim Var</a>
+        </div>
+
+    </div>
+
+@section loginregisterjs{
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/icheck.min.js"></script>
+  
+    }
+
+</body>
+    

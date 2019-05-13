@@ -1,0 +1,41 @@
+﻿@model Burak_1380_MVC.Models.Urun
+@{
+    ViewBag.Title = "Sil";
+    Layout = "~/Areas/Yonetim/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Sil</h2>
+
+<form method="post" action="/yonetim/urun/sil">
+    <input type="hidden" name="UrunEkleyen" value="@User.Identity.Name" />
+    <div class="box-body col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Ürün Adı</label>
+            <input type="text" class="form-control" id="" name="" value="@Model.UrunAdi">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Ürün Tarih</label>
+            <input type="date" class="form-control" id="" name="" value="@Model.UrunTarih">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Ürün Stok</label>
+            <input type="number" class="form-control" id="" name="" value="@Model.UrunStok">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Ürün Fiyat</label>
+            <input type="text" class="form-control" id="" name="" value="@Model.UrunFiyat">
+        </div>
+        <div class="form-group">
+            <label>Ürün Kategori</label>
+            <input type="text" name="" value="@Model.KategoriId" />
+        </div>
+        <div class="form-group">
+            <label>Ürün Açıklama</label>
+            <input type="text" name="name" value="@Model.UrunAciklama" />
+        </div>
+
+      
+        <input type="hidden" name="UrunId" value="@Model.UrunId" />
+        <input type="submit" value="Ürün Sil" />
+
+</form>

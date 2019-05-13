@@ -1,0 +1,142 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<Burak_1380_MVC.Models.Urun>
+
+@{
+    ViewBag.Title = "Urunler";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+@section urunlercss{
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="~/Content/css/bootstrap.min.css" />
+
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="~/Content/css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/css/slick-theme.css" />
+
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="~/Content/css/nouislider.min.css" />
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="~/Content/css/style.css" />
+
+}
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- ASIDE -->
+            <div id="aside" class="col-md-3">
+                <!-- aside Widget -->
+                <div class="aside">
+                    <h3 class="aside-title">Categories</h3>
+                    <div class="checkbox-filter">
+                        <ul>
+                            @foreach (var liste in ViewBag.Kategori)
+                            {
+                                <li>@liste.KategoriAdi</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <!-- /aside Widget -->
+                <!-- aside Widget -->
+                <div class="aside">
+                    <h3 class="aside-title">Price</h3>
+                    <div class="price-filter">
+                        <div id="price-slider"></div>
+                        <div class="input-number price-min">
+                            <input id="price-min" type="number">
+                            <span class="qty-up">+</span>
+                            <span class="qty-down">-</span>
+                        </div>
+                        <span>-</span>
+                        <div class="input-number price-max">
+                            <input id="price-max" type="number">
+                            <span class="qty-up">+</span>
+                            <span class="qty-down">-</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /aside Widget -->
+                <!-- aside Widget -->
+                <!-- /aside Widget -->
+                <!-- aside Widget -->
+                <!-- /aside Widget -->
+            </div>
+            <!-- /ASIDE -->
+            <!-- STORE -->
+            <div id="store" class="col-md-9">
+                <!-- store top filter -->
+                
+                <!-- /store top filter -->
+                <!-- store products -->
+                <div class="row">
+                    <!-- product -->
+
+                    <ul>
+                        @foreach (var liste in Model)
+                        {
+                            
+                            <li>
+                                <div class="col-md-4 col-xs-6">
+                                    <div class="product">
+                                        <div class="product-img">
+                                            <img src="~/Content/upload/@liste.UrunResim" height="300" width="250" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <p class="product-category">@liste.KategoriId</p>
+                                            <h3 class="product-name"><a href="/Home/Detay/@liste.UrunId">@liste.UrunAdi</a></h3>
+                                            <h4 class="product-price">@liste.UrunFiyat ₺</h4>
+
+                                            <div class="product-btns">
+                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Favorilere Ekle</span></button>
+                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">Karşılaştır</span></button>
+                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Görüntüle</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+
+
+                </div>
+                <!-- /store products -->
+                <!-- store bottom filter -->
+                <div style="margin-bottom:40px;"></div>
+                <div class="row">
+                    <div class="col-md-8 text-center">
+                        <div class="pagedList pagination-lg">
+                            @Html.PagedListPager(Model,Page=>Url.Action("Urunler",new { Page}),PagedListRenderOptions.Classic)
+                        </div>
+                    </div>
+                </div>
+                <!-- /store bottom filter -->
+            </div>
+            <!-- /STORE -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+@section urunlerjs{
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/slick.min.js"></script>
+    <script src="~/Content/js/nouislider.min.js"></script>
+    <script src="~/Content/js/jquery.zoom.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+
+}

@@ -1,0 +1,50 @@
+﻿@model List<Burak_1380_MVC.Models.Kategori>
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Areas/Yonetim/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Ürün Ekle</h2>
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" name="UrunEkleyen" value="@User.Identity.Name"/>
+    <div class="box-body col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Ürün Adı</label>
+            <input type="text" class="form-control" id="" name="UrunAdi" placeholder="Ürün Adı Giriniz">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Ürün Tarih</label>
+            <input type="date" class="form-control" id="" name="UrunTarih" placeholder="Ürün Tarihi Giriniz">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Ürün Stok</label>
+            <input type="number" class="form-control" id="" name="UrunStok" placeholder="Ürün Stok Giriniz">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Ürün Fiyat</label>
+            <input type="text" class="form-control" id="" name="UrunFiyat" placeholder="Ürün Fiyat Giriniz">
+        </div>
+        <div class="form-group">
+            <label>Ürün Kategori</label>
+            <select name="KategoriId" class="form-control">
+                @foreach (var item in ViewBag.Kategoriler)
+                {
+                    <option value="@item.KategoriId">@item.KategoriAdi   <p>@ViewBag.KatSayi</p></option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Ürün Açıklama</label>
+            <textarea name="UrunAciklama" class="form-control" rows="3" placeholder="Ürün Hakkında Açıklama Yapınız...."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="">Resim Ekle</label>
+            <input name="UrunResim" type="file">
+        </div>
+        <div class="form-group">
+
+            <input type="submit" name="name" value="Kaydet" class="btn btn-block" />
+        </div>
+    </div>
+</form>

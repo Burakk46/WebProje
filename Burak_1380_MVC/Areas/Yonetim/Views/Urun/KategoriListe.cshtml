@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "KategoriListe";
+    Layout = "~/Areas/Yonetim/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section tablescss{
+
+    <link href="~/Content/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/_all-skins.min.css" rel="stylesheet" />
+}
+
+<h2>KategoriListe</h2>
+
+
+
+
+@section tablesjs{
+    <script src="~/Content/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/Content/js/jquery.slimscroll.min.js"></script>
+    <script src="~/Content/js/fastclick.js"></script>
+    <script src="~/Content/js/demo.js"></script>
+    <script>
+        $(function () {
+            $('#example1').DataTable()
+            ({
+                'paging': true,
+                'lengthChange': false,
+                'searching': false,
+                'ordering': true,
+                'info': true,
+                'autoWidth': false
+            })
+        })
+    </script>
+}

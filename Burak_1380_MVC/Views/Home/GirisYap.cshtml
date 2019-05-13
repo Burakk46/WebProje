@@ -1,0 +1,54 @@
+﻿@model Burak_1380_MVC.Models.Urun
+@{
+    ViewBag.Title = "GirisYap";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+@section loginregistercss{
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Ionicons -->
+    <link href="~/Content/css/ionicons.min.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link href="~/Content/css/AdminLTE.min.css" rel="stylesheet" />
+    <!-- iCheck -->
+    <link href="~/Content/css/blue.css" rel="stylesheet" />
+}
+<body class="hold-transition register-page">
+    <div class="register-box">
+        <div class="register-box-body">
+            <p class="login-box-msg">Kayıt Ol</p>
+            <form method="post">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="İsim" name="KullaniciEmail">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Soyisim" name="KullaniciSifre">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>           
+                <div class="row">          
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Giriş Yap</button>
+                    </div>
+                </div>
+            </form>
+            <p class="text-center font-weight-bold">@ViewBag.Mesaj</p>
+            <div class="social-auth-links text-center">
+                <p>- Veya -</p>
+                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
+                    <i class="fa fa-facebook"></i> <div class="text-center">Facebook İle Giriş Yap</div>
+                </a>
+                <a href="#" class="btn btn-block btn-social btn-google btn-flat">
+                    <i class="fa fa-google-plus"></i><div class="text-center">Google+ İle Giriş Yap</div>
+                </a>
+            </div>
+            <a href="login.html" class="text-center">Şifremi Unuttum</a>
+        </div>
+    </div>
+    @section loginregisterjs{
+        <script src="~/Content/js/jquery.min.js"></script>
+        <script src="~/Content/js/bootstrap.min.js"></script>
+        <script src="~/Content/js/icheck.min.js"></script>
+    }
+
+</body>
+</center>

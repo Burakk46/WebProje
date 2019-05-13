@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "KullaniciEkle";
+    Layout = "~/Areas/Yonetim/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Kullanıcı Ekle</h2>
+
+<form method="post">
+    <div class="box-body col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Kullanıcı Adı</label>
+            <input type="text" class="form-control" id="" name="KullaniciAdi" placeholder="Kullanıcı Adı Giriniz">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Kullanıcı Şifre</label>
+            <input type="password" class="form-control" id="" name="KullaniciSifre" placeholder="Kullanıcı Şifre Giriniz">
+        </div>
+        <div class="form-group">
+            <input type="submit" name="name" value="Kaydet" class="btn btn-block" />
+        </div>
+  <center>@ViewBag.Hata</center>  </div>
+</form>
